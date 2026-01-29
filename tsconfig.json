@@ -18,8 +18,13 @@
         "name": "next"
       }
     ],
+    "baseUrl": ".",
     "paths": {
-      "@/*": ["./src/*"]
+      "@/*": ["./src/*"],
+      "@/components": ["./src/app/components/"],
+      "@/assets/*": ["./public/assets/*"],
+      "@/utils/*": ["./src/app/utils/*"],
+      "@/styles/*": ["./src/app/styles/*"]
     }
   },
   "include": [

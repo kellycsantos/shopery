@@ -1,0 +1,8 @@
+@use './styles/_colors.module' as *;
+@use './styles/_fonts.module' as *;
+
+
+.text{
+    font-size: 2rem;
+    opacity: .9;
+}
