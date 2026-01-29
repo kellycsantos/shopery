@@ -42,6 +42,10 @@ h5 {
   @include heading-05
 };
 
+button{
+  border: none;
+  cursor: pointer;
+}
 
 small {}
 
