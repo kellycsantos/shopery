@@ -47,9 +47,9 @@ button{
   cursor: pointer;
 }
 
-small {}
-
-;
+small {
+ @include small-text()
+};
 
 label {}
 
