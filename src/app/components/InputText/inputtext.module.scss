@@ -1,0 +1,39 @@
+@use '../../styles/_colors.module' as *;
+
+.input_container {
+   width: 300px;
+   margin-left: 80px;
+
+    .input {
+        display: flex;
+        align-items: center;
+        padding: 5px 16px;
+        border-radius: 6px;
+        border: 2px solid $gray-300;
+        justify-content: space-between;
+      
+        
+        input {
+            width: 100%;
+            font-size: 1rem;
+            border: none;
+            height: 30px !important;
+        }
+
+   
+    }
+
+    .alertmsg {
+        &.error {
+            color: $danger;
+        }
+
+        &.success {
+            color: $primary
+        }
+
+        &.warning {
+            color: $warning
+        }
+    }
+}
