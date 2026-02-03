@@ -1,6 +1,5 @@
 import { screen, render } from "@testing-library/react";
 import { expect, describe, it, vi } from "vitest";
-import userEvent from "@testing-library/user-event";
 import { Input } from "./InputText";
 
 describe('Input text', ()=> {
