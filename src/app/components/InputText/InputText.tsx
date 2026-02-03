@@ -7,18 +7,12 @@ type InputProps = {
     typeError?: 'error' | 'success' | 'warning' | null,
 }
 
-const getIcon = (error: string) => {
-    if (error) {
-        if (error === 'error') {
-            return <AlertTriangle color='#EA4B48' height={24} width={24}/>
-        }
-        if (error === 'success') {
-            return <Check color='#00B207' height={24} width={24}/>
-        }
-        if (error === 'warning') {
-            return <AlertCircle color='#FF8A00' height={24} width={24}/>
-        }
-    }
+const size = 24 as const
+
+const getIcon = {
+  error: <AlertTriangle color='#EA4B48' height={size} width={size}/>,
+  success: <Check color='#00B207' height={size} width={size}/>,
+  warning: <AlertCircle color='#FF8A00' height={size} width={size}/>,
 }
 
 export const Input = ({ placeholder, errormessage, typeError = null }: InputProps) => {
@@ -27,7 +21,7 @@ export const Input = ({ placeholder, errormessage, typeError = null }: InputProp
             <div className={styles.input}>
                 <input type="email" placeholder={placeholder} />
                 {
-                    typeError && getIcon(typeError)
+                    typeError && getIcon[typeError]
                 }
             </div>
             {
