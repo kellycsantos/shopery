@@ -1,5 +1,5 @@
-@use '@/styles/_colors.module' as *;
-@use '@/styles/_fonts.module' as *;
+@use '../../styles//_colors.module' as *;
+@use '../../styles/__fonts.module' as *;
 
 @mixin pill($bg, $text) {
     background: lighten($bg, 28%);
