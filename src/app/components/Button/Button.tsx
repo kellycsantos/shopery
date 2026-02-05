@@ -4,13 +4,14 @@ type ButtonProps = {
     text: string,
     variable?: 'primary' | 'secondary' | 'outline',
     size?: 'sm' | 'md' | 'lg'
-    onClick?: () => void
+    onClick?: () => void,
+    disabled?: boolean
 }
 
-export const Button = ({text,variable = "primary", size = "sm",onClick}: ButtonProps) => {
+export const Button = ({text,variable = "primary", size = "sm",disabled=false,onClick}: ButtonProps) => {
     const primary = 'primary'
 
     return(
-        <button data-testid="button" className={`${styles.button} ${styles[variable]} ${styles[size]}`} onClick={onClick}>{text}</button>
+        <button data-testid="button" className={`${styles.button} ${styles[variable]} ${styles[size]}`} onClick={onClick} disabled={disabled}>{text}</button>
     )
 }

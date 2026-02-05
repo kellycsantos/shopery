@@ -4,7 +4,10 @@
     
     border-radius: 24px;
     transition: all .3s linear;
-
+    &:disabled {
+        filter: contrast(0.89) saturate(0.4) brightness(.85) !important;
+        cursor: initial;
+    }
     &.sm{
     padding: 10px 24px;
     }
@@ -19,7 +22,7 @@
         background: $primary;
         color: $white;
 
-        &:hover {
+        &:not(:disabled):hover {
             background: $primary-dark;
         }
     }
@@ -28,7 +31,7 @@
         background: $green-200;
         color: $primary;
 
-        &:hover {
+         &:not(:disabled):hover {
             background: $green-300;
             color: $primary-dark;
 
@@ -40,7 +43,7 @@
         color: $primary;
         border: 2px solid $primary;
 
-        &:hover {
+         &:not(:disabled):hover {
             border-color: $primary-dark;
             color: $primary-dark;
         }
