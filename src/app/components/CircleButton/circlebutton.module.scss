@@ -1,0 +1,44 @@
+@use '../../styles/_colors.module' as *;
+
+@mixin size($size) {
+    width: $size;
+    height: $size;
+}
+
+@mixin variant($bg,$color) {
+    background-color: $bg;
+    color: $color;
+}
+
+.circleButton {
+    cursor: pointer;
+    border-radius: 50%;
+    margin: 10px;
+    transition: all .3s linear;
+    
+    &:hover{
+        scale: 0.95;
+    }
+    &.sm{
+        @include size(20px);
+    }
+
+    &.md{
+        @include size(40px);
+    }
+
+    &.lg{
+        @include size(60px);
+    }
+
+    &.primary {
+        @include variant($primary, $white);
+    }
+    &.secondary {
+        @include variant($white, $primary-dark);
+        border: 2px solid $gray-300;
+    }
+    &.dark {
+        @include variant($primary-dark, $white);
+    }
+}
