@@ -1,0 +1,53 @@
+@use '../../styles/_colors.module' as *;
+
+.button {
+    
+    border-radius: 24px;
+    transition: all .3s linear;
+    &:disabled {
+        filter: contrast(0.89) saturate(0.4) brightness(.85) !important;
+        cursor: initial;
+    }
+    &.sm{
+    padding: 10px 24px;
+    }
+    &.md{
+    padding: 14px 32px;
+    }
+    &.lg{
+    padding: 16px 40px;
+    }
+
+    &.primary {
+        background: $primary;
+        color: $white;
+
+        &:not(:disabled):hover {
+            background: $primary-dark;
+        }
+    }
+
+    &.secondary {
+        background: $green-200;
+        color: $primary;
+
+         &:not(:disabled):hover {
+            background: $green-300;
+            color: $primary-dark;
+
+        }
+    }
+
+    &.outline {
+        background: $white;
+        color: $primary;
+        border: 2px solid $primary;
+
+         &:not(:disabled):hover {
+            border-color: $primary-dark;
+            color: $primary-dark;
+        }
+    }
+
+
+}

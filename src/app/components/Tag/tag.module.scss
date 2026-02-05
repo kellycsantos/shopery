@@ -1,0 +1,53 @@
+@use "sass:color";
+@use '../../styles//_colors.module' as *;
+@use '../../styles/__fonts.module' as *;
+
+@mixin pill($bg, $text) {
+    background: color.adjust($bg, $lightness: 28%);
+    color: color.adjust($text, $lightness: -10%);
+    border-radius: 30px;
+    padding: 2px 8px;
+    @include small-text();
+}
+
+.tag {
+    padding: 3px 8px;
+    background: $danger ;
+    max-width: max-content;
+    color: $white;
+    border-radius: 4px;
+    text-transform: capitalize;
+
+    &.discount {
+        background: $danger ;
+
+        &.pill {
+            @include pill($danger, $danger);
+        }
+    }
+
+    &.new {
+        background: $warning ;
+
+        &.pill {
+            @include pill($warning, $warning);
+        }
+    }
+
+    &.bestSale {
+        background: $secondary ;
+
+        &.pill {
+            @include pill($secondary, $secondary);
+        }
+    }
+
+    &.soldOut {
+        background: $gray-800 ;
+
+        &.pill {
+            @include pill($gray-800, $gray-800);
+        }
+    }
+
+}

@@ -1,0 +1,40 @@
+@use '../../styles/_colors.module' as *;
+
+.input_container {
+    display: flex;
+    width: max-content;
+    align-items: center;
+
+    .radio {
+        border: 1px solid $primary;
+        border-radius: 50%;
+        width: 20px;
+        height: 20px;
+        display: flex;
+        align-items: center;
+        justify-content: center;
+
+        .element[type=radio] {
+            display: none !important;
+        }
+
+        &:has(input[type=radio]:checked),
+        .cirle {
+            border: 1px solid $primary;
+
+            .circle {
+                display: inline-block;
+                height: 12px;
+                width: 12px;
+                border-radius: 50%;
+                background: $primary;
+            }
+        }
+
+        
+    }
+    .visible_label{
+       cursor: pointer;
+       margin-left: 4px;
+    }
+}

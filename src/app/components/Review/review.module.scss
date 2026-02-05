@@ -1,0 +1,12 @@
+@use '../../styles/_colors.module' as *;
+
+.reviewStars {
+    .star {
+        margin-right: 2px;
+        fill: $gray-300;
+
+        &.active{
+            fill: $warning;
+        }
+    }
+}

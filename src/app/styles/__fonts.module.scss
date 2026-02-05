@@ -1,5 +1,9 @@
 @use './_colors.module' as *;
 
+@mixin small-text(){
+   font-size: 0.90rem; 
+}
+
 @mixin body-text() {
     font-size: 1rem;
     color: $gray-500;
