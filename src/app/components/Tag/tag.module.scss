@@ -1,9 +1,10 @@
+@use "sass:color";
 @use '../../styles//_colors.module' as *;
 @use '../../styles/__fonts.module' as *;
 
 @mixin pill($bg, $text) {
-    background: lighten($bg, 28%);
-    color: darken($text, 10%);
+    background: color.adjust($bg, $lightness: 28%);
+    color: color.adjust($text, $lightness: -10%);
     border-radius: 30px;
     padding: 2px 8px;
     @include small-text();
