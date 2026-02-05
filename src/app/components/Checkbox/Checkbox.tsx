@@ -11,7 +11,7 @@ type CheckboxProps = {
 export const Checkbox = ({label, value, onClick, onChange}: CheckboxProps) => {
     return (
         <>
-            <label htmlFor={value} className={styles.checkbox_container}>
+            <label data-testid='checkbox' htmlFor={value} className={styles.checkbox_container}>
                 <span className={styles.box}>
                     <Check color='#FFFFFF' strokeWidth={3}/>
                 </span>
