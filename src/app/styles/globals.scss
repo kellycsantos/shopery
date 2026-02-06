@@ -1,4 +1,5 @@
 @use './_fonts.module' as *;
+@use './_colors.module' as *;
 
 * {
   box-sizing: border-box;
@@ -51,6 +52,6 @@ small {
  @include small-text()
 };
 
-label {}
-
-;
+a {
+  color: $gray-800
+};
