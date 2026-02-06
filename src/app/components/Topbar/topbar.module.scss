@@ -1,0 +1,20 @@
+@use '../../styles/_colors.module' as *;
+@use '../../styles/_fonts.module' as *;
+
+.topbar {
+    background: $gray-800;
+    color: $gray-300 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    min-height: 45px;
+    padding: 12px 6px;
+    @include small-text();
+
+    .limit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1600px;
+    }
+}
