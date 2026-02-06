@@ -1,0 +1,13 @@
+@use '../../../styles/_colors.module' as *;
+
+.form {
+    width: clamp(300px, 80dvw, 520px);
+    display: flex;
+    flex-direction: column;
+    padding: 24px;
+    border-radius: 8px;
+    gap: 12px;
+    box-shadow: 2px 2px 20px $gray-300;
+    text-align: center;
+
+}
