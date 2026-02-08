@@ -1,0 +1,18 @@
+.not_found_page{
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    text-align: center;
+    flex-direction: column;
+    gap: 20px;
+    min-height: 62.1dvh;
+    margin-block: 5dvh;
+
+    img{
+        width: 100% !important;
+    }
+
+    p{
+        max-width: 600px;
+    }
+}
