@@ -7,8 +7,7 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    min-height: 45px;
-    padding: 12px 6px;
+    height: 3dvh;
     @include small-text();
 
     .limit {
@@ -16,5 +15,11 @@
         align-items: center;
         justify-content: space-between;
         width: 1600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topbar {
+        height: 12dvh;
     }
 }
