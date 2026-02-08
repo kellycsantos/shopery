@@ -12,6 +12,8 @@
 html {
   font-size: 16px;
   font-family: 'Poppins';
+  overflow-x: hidden !important;
+  max-width: 100dvw !important;
 }
 
 p {

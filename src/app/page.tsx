@@ -1,3 +1,4 @@
+import Link from 'next/link';
 import { Input } from './components';
 import styles from './page.module.scss'
 export default function Home() {
@@ -13,6 +14,9 @@ export default function Home() {
       <Input
       placeholder='Email'
       />
+
+      <Link href={'/register'}>Registrar</Link><br/>
+      <Link href={'/login'}>Login</Link>
       </main>
     </div>
   );
