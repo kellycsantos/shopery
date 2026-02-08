@@ -5,6 +5,7 @@ type InputProps = {
     placeholder: string,
     errormessage?: string,
     typeError?: 'error' | 'success' | 'warning' | null,
+    icon?: React.ReactNode,
 }
 
 const size = 24 as const
@@ -15,10 +16,11 @@ const getIcon = {
   warning: <AlertCircle color='#FF8A00' height={size} width={size}/>,
 }
 
-export const Input = ({ placeholder, errormessage, typeError = null }: InputProps) => {
+export const Input = ({ placeholder, errormessage, typeError = null, icon }: InputProps) => {
     return (
         <div data-testid="input" className={styles.input_container}>
             <div className={styles.input}>
+                {icon}
                 <input type="email" placeholder={placeholder} />
                 {
                     typeError && getIcon[typeError]
