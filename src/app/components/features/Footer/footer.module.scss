@@ -1,0 +1,60 @@
+@use '../../../styles/_colors.module' as *;
+@use '../../../styles/_fonts.module' as *;
+
+.footer {
+    background: $gray-800;
+    color: $white;
+    display: flex;
+    flex-wrap: wrap;
+    align-items: center;
+    justify-content: center;
+    min-height: 18dvh;
+    padding-block: 2dvh;
+
+
+    .container {
+        width: 1600px;
+        display: flex;
+        justify-content: space-between;
+        gap: 30px;
+        flex-wrap: wrap;
+
+        &:last-child {
+            border-top: 1px solid $gray-700;
+            padding-top: 1dvh;
+            align-items: center;
+
+            .paymentIcons{
+                img{
+
+                    margin-left: 4px;
+                }
+            }
+        }
+
+        .info {
+            max-width: 350px;
+        }
+
+        .link_column {
+            color: $white !important;
+            display: flex;
+            flex-direction: column;
+            width: 250px;
+            text-transform: capitalize;
+
+            h4 {
+                font-size: 1rem !important;
+                margin-bottom: 8px;
+            }
+
+            a {
+                color: $gray-500 !important;
+                @include small-text();
+                margin-bottom: 10px;
+
+            }
+        }
+    }
+
+}

@@ -1,4 +1,5 @@
 @use './_fonts.module' as *;
+@use './_colors.module' as *;
 
 * {
   box-sizing: border-box;
@@ -11,6 +12,8 @@
 html {
   font-size: 16px;
   font-family: 'Poppins';
+  overflow-x: hidden !important;
+  max-width: 100dvw !important;
 }
 
 p {
@@ -51,6 +54,6 @@ small {
  @include small-text()
 };
 
-label {}
-
-;
+a {
+  color: $gray-800
+};

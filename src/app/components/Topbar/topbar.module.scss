@@ -1,0 +1,25 @@
+@use '../../styles/_colors.module' as *;
+@use '../../styles/_fonts.module' as *;
+
+.topbar {
+    background: $gray-800;
+    color: $gray-300 ;
+    display: flex;
+    align-items: center;
+    justify-content: space-around;
+    height: 3dvh;
+    @include small-text();
+
+    .limit {
+        display: flex;
+        align-items: center;
+        justify-content: space-between;
+        width: 1600px;
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .topbar {
+        height: 12dvh;
+    }
+}

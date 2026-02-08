@@ -1,7 +1,7 @@
 @use '../../styles/_colors.module' as *;
 
 .input_container {
-   width: 300px;
+    min-width: 150px;
 
     .input {
         display: flex;
