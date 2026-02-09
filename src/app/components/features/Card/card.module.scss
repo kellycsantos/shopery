@@ -1,0 +1,49 @@
+@use '../../../styles/_colors.module' as *;
+
+.card {
+    border: 1px solid $gray-300;
+    width: 230px !important;
+    overflow: hidden;
+    display: flex;
+    flex-direction: column;
+    padding: 10px;
+    transition: .8s;
+    cursor: pointer;
+    margin: 5px;
+
+    &.rounded {
+        border-radius: 8px;
+    }
+
+    &:hover {
+        border: 1px solid $primary;
+        scale: 1.008;
+
+        .btn_bag {
+           
+            button {
+                background: $primary !important;
+                color: $white;
+                border: none;
+            }
+        }
+    }
+
+    .tag_container{
+        display: flex;
+        gap: 4px;
+         position: absolute;
+    }
+
+    img {
+        height: 200px;
+        width: 100%;
+        object-fit: fill !important;
+    }
+
+    .info_card {
+        display: flex;
+        justify-content: space-between;
+
+    }
+}
