@@ -7,8 +7,10 @@
     display: flex;
     align-items: center;
     justify-content: space-around;
-    height: 3dvh;
+    justify-items: center;
+    padding-block: 10px;
     @include small-text();
+    width: 100dvw;
 
     .limit {
         display: flex;

@@ -8,16 +8,19 @@
     flex-wrap: wrap;
     align-items: center;
     justify-content: center;
-    min-height: 18dvh;
+    flex-direction: column;
     padding-block: 2dvh;
+    padding-inline: 24px;
+    width: 100dvw;
 
 
     .container {
-        width: 1600px;
         display: flex;
         justify-content: space-between;
         gap: 30px;
-        flex-wrap: wrap;
+        max-width: 1600px;
+        width: 100%;
+        flex-wrap: wrap ;
 
         &:last-child {
             border-top: 1px solid $gray-700;
