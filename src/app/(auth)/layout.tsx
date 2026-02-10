@@ -1,5 +1,5 @@
-import { Topbar } from "../components/Topbar";
-import styles from './layout.module.scss'
+import { Footer, Topbar } from "@/components";
+import style from './layout.module.scss'
 
 export default function RootLayout({
     children,
@@ -8,11 +8,13 @@ export default function RootLayout({
 }>) {
     return (
         <>
-        <Topbar/>
-        <p>Rotas de login</p>
-        <main className={styles.main}>
-            {children}
-            </main>
+            <div className={style.container}>
+                <Topbar />
+                <div className={style.main}>
+                    {children}
+                </div>
+                <Footer />
+            </div>
         </>
     );
 }
