@@ -1,0 +1,21 @@
+.banner{
+    border: 1px solid red;
+    display: flex;
+    align-items: center;
+    width: 100dvw;
+    .limit{
+        img{
+            max-width: 700px;
+            width: 50%;
+            aspect-ratio: 16/9;
+        }
+        .info{
+            h1{
+                line-height: 1.1;
+            }
+            p{
+              margin-block: 12px;  
+            }
+        }
+    }
+}
