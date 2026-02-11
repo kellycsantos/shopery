@@ -1,5 +1,5 @@
 import Link from 'next/link';
-import { Banner, Input } from './components';
+import { Banner, Input, Extras } from './components';
 import styles from './page.module.scss'
 export default function Home() {
   return (
@@ -10,6 +10,9 @@ export default function Home() {
         <Link href='/register'>Register</Link><br/>
         <Link href='/login'>Login</Link><br/>
         <Link href='/config'>Not found</Link><br/>
+        <hr/>
+        <br/>
+        <Extras/>
       </main>
     </div>
   );
