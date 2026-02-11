@@ -6,6 +6,10 @@ export default function Home() {
     <div>
       <main>
         <h1>Home page</h1>
+        <Link href='/'>Home</Link> <br/>
+        <Link href='/register'>Register</Link><br/>
+        <Link href='/login'>Login</Link><br/>
+        <Link href='/config'>Not found</Link><br/>
       </main>
     </div>
   );
