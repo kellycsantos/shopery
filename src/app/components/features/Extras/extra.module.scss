@@ -1,4 +1,71 @@
-.extra_container{
-    border: 1px solid red;
-    width: 290px;
+@use '../../../styles/_colors.module' as *;
+
+.extra_container {
+    box-shadow: 4px 5px 18px $gray-200;
+    background: $white;
+    display: flex;
+    flex-wrap: wrap;
+    justify-self: center;
+    height: max-content;
+    max-width: 1300px;
+    border-radius: 8px;
+    overflow: hidden;
+
+    &.overlap{
+        position: relative;
+        top: 50;
+        margin-top: -100px;
+        z-index: 100;
+    }
+
+    article {
+        min-width: 300px;
+        flex: 1;
+        padding: 30px;
+        border: 1px solid $gray-300;
+
+        &:hover {
+            background: $primary;
+            color: $white !important;
+            cursor: pointer;
+            scale: 1.01;
+
+
+
+            .icon_container {
+                background: $white;
+            }
+
+            small {
+                color: $white;
+            }
+
+        }
+
+        .icon_container {
+            padding: 10px;
+            border-radius: 50%;
+            border: 1px solid $gray-300;
+            display: flex;
+            width: max-content;
+
+            svg {
+                color: $primary;
+                height: 35px !important;
+                width: 35px !important;
+                stroke-width: 1.5px;
+            }
+        }
+
+        h6 {
+            font-size: 18px;
+            margin-block: 8px 4px;
+            font-weight: 500;
+        }
+
+        small {
+            color: $gray-500 ;
+        }
+    }
+
 }
