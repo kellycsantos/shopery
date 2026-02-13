@@ -1,15 +1,16 @@
 import Link from 'next/link';
+import { Searchbar, Banner, Footer, Extras } from '@/components';
+import style from './page.module.scss'
 export default function Home() {
   return (
-    <div>
-      <main>
-        <h1>Home page</h1>
-        <Link href='/'>Home</Link> <br/>
-        <Link href='/register'>Register</Link><br/>
-        <Link href='/login'>Login</Link><br/>
-        <Link href='/config'>Not found</Link><br/>
-        <br/>
+    <div className={style.home}>
+      <Searchbar />
+      <Banner />
+      <Extras isOverlap />
+      <main className={style.main}>
+
       </main>
+      <Footer />
     </div>
   );
 }
