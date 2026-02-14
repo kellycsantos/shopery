@@ -9,7 +9,7 @@
     padding: 10px;
     transition: .8s;
     cursor: pointer;
-    margin: 5px;
+    background: $white;
 
     &.rounded {
         border-radius: 8px;
@@ -44,6 +44,7 @@
     .info_card {
         display: flex;
         justify-content: space-between;
+        text-transform: capitalize;
 
     }
 }
