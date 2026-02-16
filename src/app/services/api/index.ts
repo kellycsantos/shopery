@@ -3,7 +3,7 @@ import axios from "axios";
 const API_URL= process.env.NEXT_PUBLIC_BASE_API
 
 export const api = axios.create({
-    baseURL: 'http://localhost:3001'
+    baseURL: API_URL
 })
 
 export const getAllProducts = async () =>
