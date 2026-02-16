@@ -25,7 +25,7 @@ export default function Home() {
           <div className={style.limit}>
             <h3>Introducing Our Products</h3>
               <CardGrid data={products.slice(10,18)}/> 
-            <Link href={'/shopping'}>
+            <Link href={'/products'}>
               <Button text='See All' />
             </Link>
           </div>

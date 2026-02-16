@@ -9,7 +9,7 @@ export const CardGrid = ({ data }: GridProps) => {
         <div className={styles.grid}>
             {
                 data.map((item) => (
-                    <Card link={`/product/${item.sku}`}
+                    <Card link={`/products/${item.sku}`}
                         img={item.image}
                         name={item.name} value={item.value}
                         valueWithDiscount={item.valueWithDiscount}
