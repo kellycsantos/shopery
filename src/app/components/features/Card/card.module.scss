@@ -20,7 +20,7 @@
         scale: 1.008;
 
         .btn_bag {
-           
+
             button {
                 background: $primary !important;
                 color: $white;
@@ -29,10 +29,10 @@
         }
     }
 
-    .tag_container{
+    .tag_container {
         display: flex;
         gap: 4px;
-         position: absolute;
+        position: absolute;
     }
 
     img {
@@ -45,6 +45,11 @@
         display: flex;
         justify-content: space-between;
         text-transform: capitalize;
+
+        .originalValue {
+            text-decoration: line-through ;
+        }
+
 
     }
 }

@@ -4,33 +4,39 @@ import Image from 'next/image'
 
 import greenApple from '@/assets/fruit/green_apple.png'
 
-import { ReviewStars, Tag , CircleButton, TagProps} from '@/components'
+import { ReviewStars, Tag, CircleButton, TagProps } from '@/components'
 import { useRouter } from 'next/navigation'
 
 
 type CardProps = {
     rounded?: boolean,
     tags?: TagProps[],
-    link?: string | undefined
+    link?: string | undefined,
+    img: string,
+    name: string,
+    value: number,
+    valueWithDiscount: number,
+    discount: boolean,
+    rating: number
 }
-export const Card = ({ rounded = false, tags, link }: CardProps) => {
+export const Card = ({ rounded = false, tags, link, img, name, value, valueWithDiscount, discount, rating }: CardProps) => {
     const router = useRouter()
     return (
-        <div className={`${style.card} ${rounded && style.rounded}`} onClick={() => router.push(link ? link: '') }>
+        <div className={`${style.card} ${rounded && style.rounded}`} onClick={() => router.push(link ? link : '')}>
             {
                 tags &&
                 <span className={style.tag_container}>
-                {tags.map((tag, index) => (
-                    <Tag text={tag?.text} type={tag.type} key={index}/>
-                ))}
+                    {tags.map((tag, index) => (
+                        <Tag text={tag?.text} type={tag.type} key={index} />
+                    ))}
                 </span>
             }
-            <Image src={greenApple} alt='green apple' />
+            <Image src={img} alt={name} width={600} height={600} />
             <div className={style.info_card}>
                 <span>
-                    <p>Green Apple</p>
-                    <p>$14.99<span>$20.99</span></p>
-                    <ReviewStars stars={5} rating={4} size={19} />
+                    <p>{name}</p>
+                    <p> {discount && `$${valueWithDiscount}`} {' '}<span className={discount ? style.originalValue : ''}>${value}</span></p>
+                    <ReviewStars stars={5} rating={rating} size={19} />
                 </span>
 
                 <span className={style.btn_bag}>

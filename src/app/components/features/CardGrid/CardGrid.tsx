@@ -1,15 +1,22 @@
 import styles from './cardgrid.module.scss';
 import { Card } from '@/components';
-
+import { ProductProps } from '@/app/types';
 type GridProps = {
-    data : any
+    data: ProductProps[]
 }
-export const CardGrid = ({data}: GridProps) => {
+export const CardGrid = ({ data }: GridProps) => {
     return (
         <div className={styles.grid}>
             {
-                data.map((item, id: number) => (      
-                    <Card name={item.nome} key={id} link='/test'/>
+                data.map((item) => (
+                    <Card link={`/product/${item.sku}`}
+                        img={item.image}
+                        name={item.name} value={item.value}
+                        valueWithDiscount={item.valueWithDiscount}
+                        discount={item.discount}
+                        rating={item.rating}
+                        key={item.sku}
+                    />
                 ))
             }
         </div>
