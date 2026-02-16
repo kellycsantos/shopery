@@ -1,13 +1,46 @@
 @use './styles/_colors.module' as *;
 @use './styles/_fonts.module' as *;
 
-.home{
+.home {
     min-height: 100dvh;
     display: flex;
     flex-direction: column;
     align-items: center;
 
-    main{
+    .limit {
+        max-width: 1600px;
+        width: 100%;
+
+    }
+
+    main {
         flex: 1;
+        height: 100%;
+        display: flex;
+        flex-direction: column;
+
+
+        .introducing {
+            background: $green-200;
+            width: 100dvw;
+            flex: 1;
+            display: flex;
+            align-items: center;
+            justify-content: center;
+            padding-block: 100px;
+
+            .limit {
+                display: flex;
+                flex-direction: column;
+                align-items: center;
+                justify-items: center;
+                gap: 24px;
+
+                h3 {
+                    text-align: center;
+                    margin-bottom: 24px;
+                }
+            }
+        }
     }
 }

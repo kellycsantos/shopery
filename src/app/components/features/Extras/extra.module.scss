@@ -12,7 +12,6 @@
     overflow: hidden;
 
     &.overlap{
-        position: relative;
         top: 50;
         margin-top: -100px;
         z-index: 100;
@@ -68,4 +67,13 @@
         }
     }
 
+}
+
+@media screen and (max-width: 768px){
+    .extra_container {
+       &.overlap{
+        top: 0;
+        margin-top: 24px;
+       }
+    }
 }

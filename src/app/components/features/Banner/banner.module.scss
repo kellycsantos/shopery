@@ -14,7 +14,6 @@
         img {
             max-width: 700px;
             width: 50%;
-            aspect-ratio: 16/9;
         }
 
         .info {
@@ -22,11 +21,36 @@
 
             h1 {
                 line-height: 1.1;
+                display: flex;
+
+                br{
+                    display: none;
+                }
             }
 
             p {
                 margin-block: 12px;
             }
+        }
+    }
+}
+
+@media screen and (max-width: 768px) {
+    .limit {
+        flex-direction: column;
+
+        img {
+            width: 80dvw !important;
+            height: auto !important;
+        }
+
+        .info {
+            padding-inline: 12px;
+
+            h1 {
+                font-size: 1.2rem;
+            }
+
         }
     }
 }

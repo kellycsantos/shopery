@@ -12,7 +12,6 @@ export const Banner = () => {
 
                 <Image src={bannerImg} alt='fruit banner' />
                 <section className={style.info}>
-                    <p></p>
                     <h1>Fresh & Healthy <br />
                         Organic Food
                     </h1>
