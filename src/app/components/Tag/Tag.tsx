@@ -1,7 +1,7 @@
 import styles from './tag.module.scss'
 
 export type TagProps = {
-    text: string,
+    value: string,
     type: 'discount' | 'new' | 'bestSale' | 'soldOut',
     pill?: boolean,
 }
@@ -13,10 +13,10 @@ const textCapitalize = (tagText: string) => {
         .join(' ');
 }
 
-export const Tag = ({ text, type, pill = false }: TagProps) => {
+export const Tag = ({ value, type, pill = false }: TagProps) => {
     return (
         <div data-testid="tag" className={`${styles.tag} ${styles[type]} ${pill && styles.pill}`}>
-            {textCapitalize(text)}
+            {textCapitalize(value)}
         </div>
     )
 }

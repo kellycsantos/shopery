@@ -2,8 +2,6 @@
 import style from './card.module.scss'
 import Image from 'next/image'
 
-import greenApple from '@/assets/fruit/green_apple.png'
-
 import { ReviewStars, Tag, CircleButton, TagProps } from '@/components'
 import { useRouter } from 'next/navigation'
 
@@ -27,7 +25,7 @@ export const Card = ({ rounded = false, tags, link, img, name, value, valueWithD
                 tags &&
                 <span className={style.tag_container}>
                     {tags.map((tag, index) => (
-                        <Tag text={tag?.text} type={tag.type} key={index} />
+                        <Tag value={tag?.value} type={tag.type} key={index} />
                     ))}
                 </span>
             }

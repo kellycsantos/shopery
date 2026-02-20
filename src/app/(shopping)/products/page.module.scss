@@ -1,0 +1,13 @@
+  .products_page {
+      max-width: 1600px;
+      width: 100dvh;
+      width: 100%;
+      
+      .products_container {
+          margin-block: 48px;
+          display: grid;
+          grid-template-columns: repeat(auto-fit, 230px);
+          gap: 16px;
+          justify-content: center;
+      }
+  }
