@@ -1,23 +1,36 @@
 'use client'
+import { forwardRef } from 'react'
 import styles from './checkbox.module.scss'
 import { Check } from 'lucide-react'
 
 type CheckboxProps = {
     label: string,
-    value: string,
-    onClick?: (e:any) => void,
-    onChange?: (e: any) => void,
-}
-export const Checkbox = ({label, value, onClick, onChange}: CheckboxProps) => {
-    return (
-        <>
-            <label data-testid='checkbox' htmlFor={value} className={styles.checkbox_container}>
+    value?: string,
+    errorMessage?: string,
+
+} & Omit<React.ComponentPropsWithoutRef<'input'>, 'type'>
+
+export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
+    ({ label, value = 'on', errorMessage, ...rest }, ref) => {
+        const id = rest.name ?? value
+        return (
+            <>
+            <label data-testid="checkbox" htmlFor={id} className={styles.checkbox_container}>
                 <span className={styles.box}>
-                    <Check color='#FFFFFF' strokeWidth={3}/>
+                    <Check color="#FFFFFF" strokeWidth={3} />
                 </span>
-                <input type="checkbox" id={value} value={value} onClick={(e) => onClick?.(e)} onChange={(e) => onChange?.(e.target.checked)} />
+                <input
+                    ref={ref}
+                    type="checkbox"
+                    id={id}
+                    value={value}
+                    {...rest}
+                />
                 {label}
             </label>
-        </>
-    )
-}
+                {errorMessage && <small className={styles.errorMessage}>{errorMessage}</small>}
+            </>
+        )
+    }
+)
+Checkbox.displayName = 'Checkbox'
