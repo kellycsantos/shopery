@@ -6,12 +6,15 @@ import { Check } from 'lucide-react'
 type CheckboxProps = {
     label: string,
     value?: string,
+    errorMessage?: string,
+
 } & Omit<React.ComponentPropsWithoutRef<'input'>, 'type'>
 
 export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
-    ({ label, value = 'on', ...rest }, ref) => {
+    ({ label, value = 'on', errorMessage, ...rest }, ref) => {
         const id = rest.name ?? value
         return (
+            <>
             <label data-testid="checkbox" htmlFor={id} className={styles.checkbox_container}>
                 <span className={styles.box}>
                     <Check color="#FFFFFF" strokeWidth={3} />
@@ -25,6 +28,8 @@ export const Checkbox = forwardRef<HTMLInputElement, CheckboxProps>(
                 />
                 {label}
             </label>
+                {errorMessage && <small className={styles.errorMessage}>{errorMessage}</small>}
+            </>
         )
     }
 )

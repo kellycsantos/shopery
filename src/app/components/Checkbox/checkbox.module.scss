@@ -5,9 +5,9 @@
     align-items: center;
     cursor: pointer;
     max-width: max-content;
-    gap: 6px ;
+    gap: 6px;
 
-    input[type=checkbox]{
+    input[type=checkbox] {
         display: none;
     }
 
@@ -37,4 +37,11 @@
         }
     }
 
+}
+
+.errorMessage {
+    color: $danger;
+    font-size: 0.875rem;
+    text-align: left;
+    display: block;
 }
