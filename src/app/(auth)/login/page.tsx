@@ -14,6 +14,13 @@ const loginSchema = z.object({
         .union([z.boolean(), z.literal('true'), z.undefined()])
         .transform((v) => v === true || v === 'true')
         .default(false),
+}).superRefine(({ remember }, ctx) => {
+    if (!remember) {
+        ctx.addIssue({
+            code: z.ZodIssueCode.custom,
+            message: 'Você deve lembrar de mim',
+        })
+    }
 });
 
 const onValid = (data: z.infer<typeof loginSchema>) => {
