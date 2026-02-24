@@ -5,11 +5,15 @@ import Link from "next/link";
 
 import { z } from 'zod';
 import { zodResolver } from "@hookform/resolvers/zod";
-import { useForm } from "react-hook-form";
+import { useForm, type Resolver } from "react-hook-form";
 
 const loginSchema = z.object({
-    email: z.string().email(),
-    password: z.string().min(8).max(16),
+    email: z.string().email('Email inválido'),
+    password: z.string().min(8, 'Mínimo 8 caracteres').max(16, 'Máximo 16 caracteres'),
+    remember: z
+        .union([z.boolean(), z.literal('true'), z.undefined()])
+        .transform((v) => v === true || v === 'true')
+        .default(false),
 });
 
 const onValid = (data: z.infer<typeof loginSchema>) => {
@@ -22,11 +26,13 @@ const onInvalid = (errors: unknown) => {
 
 
 export const Login = () => {
-    const { register, handleSubmit } = useForm<z.infer<typeof loginSchema>>({
-        resolver: zodResolver(loginSchema),
+    type LoginForm = z.infer<typeof loginSchema>
+    const { register, handleSubmit } = useForm<LoginForm>({
+        resolver: zodResolver(loginSchema) as Resolver<LoginForm>,
         defaultValues: {
             email: '',
             password: '',
+            remember: false,
         },
     })
 
@@ -38,7 +44,7 @@ export const Login = () => {
                     <Input placeholder="Email" type="email" {...register('email')} />
                     <Input placeholder="Password" type="password" {...register('password')} />
                     <div >
-                        <Checkbox label="Remember me" value="true" />
+                        <Checkbox label="Remember me" value="true" {...register('remember')} />
                     </div>
                     <Button type="submit" text="Login" />
                     <p>Don't have account?
