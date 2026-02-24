@@ -8,54 +8,57 @@ import { zodResolver } from "@hookform/resolvers/zod";
 import { useForm, type Resolver } from "react-hook-form";
 
 const loginSchema = z.object({
-    email: z.string().email('Email inválido'),
-    password: z.string().min(8, 'Mínimo 8 caracteres').max(16, 'Máximo 16 caracteres'),
+    email: z.string().email('Invalid email'),
+    password: z.string().min(6, 'Minimum 6 characters').max(16, 'Maximum 16 characters'),
     remember: z
         .union([z.boolean(), z.literal('true'), z.undefined()])
         .transform((v) => v === true || v === 'true')
         .default(false),
-}).superRefine(({ remember }, ctx) => {
-    if (!remember) {
-        ctx.addIssue({
-            code: z.ZodIssueCode.custom,
-            message: 'Você deve lembrar de mim',
-        })
-    }
-});
+})
 
-const onValid = (data: z.infer<typeof loginSchema>) => {
+const handleSignIn = (data: z.infer<typeof loginSchema>) => {
     console.log('Dados do formulário:', data);
 }
 
-const onInvalid = (errors: unknown) => {
-    console.log('Erros de validação:', errors);
-}
-
-
 export const Login = () => {
     type LoginForm = z.infer<typeof loginSchema>
-    const { register, handleSubmit } = useForm<LoginForm>({
+    const { register, handleSubmit, formState: { isValid, errors } } = useForm<LoginForm>({
         resolver: zodResolver(loginSchema) as Resolver<LoginForm>,
         defaultValues: {
             email: '',
             password: '',
             remember: false,
         },
+        mode: 'onChange',
+        reValidateMode: 'onChange',
     })
 
 
     return (
         <>
             <main>
-                <Form title="Login" onSubmit={handleSubmit(onValid, onInvalid)}>
-                    <Input placeholder="Email" type="email" {...register('email')} />
-                    <Input placeholder="Password" type="password" {...register('password')} />
+                <Form title="Login" onSubmit={handleSubmit(handleSignIn)}>
+                    <Input placeholder="Email"
+                        type="email" {...register('email')}
+                        errormessage={errors.email?.message}
+                        typeError={errors.email && 'error'}
+                        required
+                    />
+                    <Input placeholder="Password"
+                        type="password" {...register('password')}
+                        errormessage={errors.password?.message}
+                        typeError={errors.password && 'error'}
+                        required
+                    />
                     <div >
-                        <Checkbox label="Remember me" value="true" {...register('remember')} />
+                        <Checkbox label="Remember me"
+                            {...register('remember')} />
                     </div>
-                    <Button type="submit" text="Login" />
-                    <p>Don't have account?
-                        <Link href="/register">Register</Link></p>
+                    <Button type="submit" text="Login" disabled={!isValid} />
+                    <p>
+                        Don't have account?{' '}
+                        <Link href="/register">Register</Link>
+                    </p>
                 </Form>
             </main>
         </>
