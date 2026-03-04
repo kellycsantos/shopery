@@ -17,6 +17,9 @@
     &.lg{
     padding: 16px 40px;
     }
+    &.full{
+        width: 100%;
+    }
 
     &.primary {
         background: $primary;

@@ -1,0 +1,10 @@
+@use '../../../styles/_colors.module' as *;
+
+.quantity{
+    display: flex;
+    align-items: center;
+    gap: 20px;
+    padding: 10px;
+    border-radius: 60px;
+    border: 1px solid $gray-300;
+}

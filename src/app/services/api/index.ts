@@ -11,7 +11,10 @@ export const getAllProducts = async () =>
 
 
 export const getProductById = async (id: number) =>
-    await api.get(`/product/${id}`)
+    await api.get(`/product/id/${Number(id)}`)
+
+export const getProductBySku = async (sku: number) =>
+    await api.get(`/product/${Number(sku)}`)
 
 
 export const getAllByCategory = async (category: string) =>

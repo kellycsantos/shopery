@@ -1,0 +1,95 @@
+ @use '../../../styles/_fonts.module' as *;
+ @use '../../../styles/_colors.module' as *;
+
+ .container {
+     display: flex;
+     max-width: 1600px;
+     column-gap: 20;
+     margin-bottom: 25px;
+
+
+     img {
+         width: 35%;
+         max-width: 400px;
+         align-self: center;
+     }
+
+     .info {
+         display: flex;
+         flex-direction: column;
+         row-gap: 8px;
+
+         h1 {
+             @include heading-03;
+             text-transform: capitalize;
+
+         }
+
+         .review_container {
+             display: flex;
+
+             p {
+                 margin-left: 25px;
+
+                 strong {
+                     color: $gray-800;
+                 }
+             }
+
+         }
+
+         .price {
+             display: flex;
+             align-items: center;
+             gap: 15px;
+
+             p {
+                 font-weight: 600;
+             }
+
+             .value {
+                 color: $primary;
+
+             }
+
+             .valueWithDiscount {
+                 font-size: .95rem;
+                 text-decoration: line-through;
+             }
+         }
+
+         .description {
+             max-width: 600px;
+             border-bottom: 1px solid $gray-300;
+             padding-bottom: 15px;
+         }
+
+         .btn_container {
+             display: flex;
+             gap: 30px !important;
+
+         }
+     }
+ }
+
+ @media screen and (max-width:768px) {
+     .container {
+         flex-direction: column;
+         width: 90dvw;
+         
+
+         img {
+             height:250px !important;
+             width: 90%;
+         }
+         .info {
+
+             h1 {
+                 @include heading-05;
+             }
+
+
+
+         }
+     }
+ }
